@@ -1,4 +1,4 @@
-
+ 
 class Noticia {
   constructor(titulo, data, autor, resumo, link, conteudo) {
     this._titulo = titulo;
@@ -39,15 +39,16 @@ class Noticia {
   formarnoticia(titulo, data, resumo, autor, link, conteudo) {
     if ((titulo.length > 0) && (data.length > 0) && (resumo.length > 0) && (autor.length > 0) && (link.length > 0) && (conteudo.length > 0)) {
       return `
-      <div id="row">
-       <div id="col-12" style="background-color: #E5E5E5;">
-       <a href=${link}>  <h5>${(titulo)}</h5></a>
-       <div> Publicado em: ${(data)}</div> 
+      <div class="row ">
+       <div class="col border shadow" style="background-color:#D3D3D3;">
+       <a href=${link}> <h5>${(titulo)}</h5></a>
+       <div>${(data)}</div> 
        <div>${(autor)}</div> 
        <div>${(resumo)}</div>  
        <div>${(conteudo)}</div>  
        </div>
-       
+
+       </div>
 `
     } else {
       throw new Pitucha("O texto de ter no mínimo de 1 cacacter")
